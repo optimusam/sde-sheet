@@ -7,8 +7,8 @@ class Solution
     {
         return mergeSort(arr, 0, (int)N-1);
     }
-    public static int mergeSort(long arr[], int l, int r) {
-        int countOfInversions = 0;
+    public static long mergeSort(long arr[], int l, int r) {
+        long countOfInversions = 0;
         if(l < r) {
             int mid = l + (r-l)/2;
             countOfInversions += mergeSort(arr, l, mid);
@@ -17,8 +17,9 @@ class Solution
         }
         return countOfInversions; 
     }
-    public static int merge(long arr[], int l, int mid, int r) {
-        int i=l, j=mid+1, countOfInversions = 0;
+    public static long merge(long arr[], int l, int mid, int r) {
+        int i=l, j=mid+1;
+        long countOfInversions = 0;
         int sizeLeft = mid-l+1;
         int sizeRight = r-mid;
         long [] left = new long[sizeLeft];
